@@ -27,11 +27,13 @@
             McBurger
         </div>    
     </div>
-    <div class="mb-3">
-        <label for="burgerInput" class="form-label">Enter your favourite burger</label>
-        <input type="email" class="form-control" id="burgerInput" placeholder="what burger do you want?">
-    </div>
-    <button class ="btn btn-lb btn-primary ">Submit</button>
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <label for="burgerInput" class="form-label">Enter your favourite burger</label>
+            <input class="form-control" name="burger" id="burgerInput" placeholder="what burger do you want?">
+        </div>
+        <button class ="btn btn-lb btn-primary ">Submit</button>
+    </form>
 </div>
 </body>
 </html>
