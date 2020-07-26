@@ -4,18 +4,18 @@ let burgers = [
 
 ]
 
-function getAvailableBurgers(){
+function getAvailable(){
     return burgers.filter(burger => burger.devoured == false )
 }
 
-function getDevouredBurgers(){
+function getDevoured(){
     return burgers.filter(burger => burger.devoured == true)
 }
 
-function addBurger (name){
+function add (name){
     burgers.push({ id : Date.now(), name, devoured : false})
 }
 
 module.exports = {
-    getAvailableBurgers, getDevouredBurgers, addBurger
+    getAvailable, getDevoured, add
 }
