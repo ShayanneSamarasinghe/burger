@@ -1,7 +1,9 @@
+require("dotenv").config() // looks for .env ; process.env gets initialized 
+
 const express = require("express")
 const exphbs = require("express-handlebars")
-const orm = require("./models/burger")
-const routes = require("./controllers/burgerControllers.js")
+const burger = require("./models/burger")
+const routes = require("./controllers/burger_controller.js")
 const app = express()
 
 
