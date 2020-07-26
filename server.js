@@ -1,6 +1,6 @@
 const express = require("express")
 const exphbs = require("express-handlebars")
-const orm = require("./models/orm")
+const orm = require("./models/burger")
 const routes = require("./controllers/burgerControllers.js")
 const app = express()
 
