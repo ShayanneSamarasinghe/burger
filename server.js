@@ -19,3 +19,7 @@ app.use(express.json())
 app.use (express.static("public"))
 
 app.use(routes)
+
+app.listen(PORT, function(){
+    console.log("Listeing on port:%s",PORT)
+})
