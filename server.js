@@ -18,10 +18,12 @@ app.use(express.json())
 // process.env.PORT lets the port be set by Heroku
 const PORT = process.env.PORT || 8080;
 
-app.use (express.static("public"))
 
 routerController(app)
 // app.use(routes)
+
+app.use (express.static("public"))
+
 
 app.listen(PORT, function(){
     console.log(`Listening on port:${PORT}`)
