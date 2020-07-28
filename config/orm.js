@@ -6,16 +6,18 @@ function selectAll(){
 
 }
 
-function InsertOne(name){
+function insertOne(name){
     return db.query ("INSERT INTO burgers SET ? " ,
-    {name, devoured: false} )
+    {burger_name: name, devoured: false} )
+
 }
 
-function UpdateOne(id, field, value ){
+function updateOne(id, field, value ){
     return db.query ("UPDATE burgers SET ? WHERE id=? ", 
-    [{[field]:value}, id])
+    [ { [field]:value }, id ] )
+
 }
 
 module.exports = {
-    dbList, dbInsert, dbUpdate
+    selectAll, insertOne, updateOne
 }

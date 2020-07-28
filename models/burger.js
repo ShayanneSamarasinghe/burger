@@ -8,22 +8,22 @@ const orm = require ('../config/orm')
 // ]
 
 function getAvailable(){
-    return orm.selectAll(false)
+    const burgerList = await orm.selectAll()
 
 }
 
 function getDevoured(){
-    return orm.dbList(true)
+    const burgerList = await orm.selectAll()
     return burgers.filter(burger => burger.devoured == true)
 }
 
 function add (name){
-    return orm.dbInsert(name)
+    return orm.insertOne(name)
     // burgers.push({ id : Date.now(), name, devoured : false})
 }
 
 function devour (id){
-    return orm.dbUpdate (id)
+    return orm.updateOne (id, "devoured", true)
 //     const idx = burgers.findIndex(burger => burger.id == id)
 //     // mark the burger as devoured //
 //     burgers[idx].devoured = true 
