@@ -7,14 +7,15 @@ const orm = require ('../config/orm')
 
 // ]
 
-function getAvailable(){
+ async function getAvailable(){
     const burgerList = await orm.selectAll()
+    return burgerList.filter(burger => burger.devoured == false)
 
 }
 
-function getDevoured(){
+ async function getDevoured(){
     const burgerList = await orm.selectAll()
-    return burgers.filter(burger => burger.devoured == true)
+    return burgerList.filter(burger => burger.devoured == true)
 }
 
 function add (name){

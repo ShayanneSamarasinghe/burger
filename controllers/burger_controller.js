@@ -1,13 +1,14 @@
 const burger = require("../models/burger.js")
+const { devour } = require("../models/burger.js")
 
 
 
 function router ( app ){
     app.get("/", async function(req,res){
         console.log(`[GET] getting list of burgers`)
-        const available = await burger.getAvailable
-        const devoured = await burger.getDevoured
-        res.render('burger_list', {available, devoured })
+        const available = await burger.getAvailable()
+        const devoured = await burger.getDevoured()
+        res.render('index', {available, devoured })
     })
 
     app.get("/devour/:id", async function (req, res){
