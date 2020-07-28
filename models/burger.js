@@ -17,7 +17,9 @@ function add (name){
 }
 
 function devour (id){
-
+    const idx = burgers.findIndex(burger => burger.id == id)
+    // mark the burger as devoured //
+    burgers[idx].devoured = true 
 }
 
 module.exports = {

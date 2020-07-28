@@ -12,8 +12,8 @@ function router ( app ){
         })
     })
 
-    app.get("/delete/:id", function (req, res){
-        const result = burger.delete(req.params.id)
+    app.get("/devour/:id", function (req, res){
+        const result = burger.devour(req.params.id)
 
         res.redirect("/")
     })
