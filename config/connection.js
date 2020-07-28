@@ -25,10 +25,12 @@ class Database {
 }
 
 const db = new Database({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "r00tr00t",
-  database: "ice_creamDB",
-  insecureAuth : true
+    host: "localhost",
+    port: 3306,
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
+    database: process.env.DB_NAME,
+    insecureAuth: true,
 });
+
+module.exports = db

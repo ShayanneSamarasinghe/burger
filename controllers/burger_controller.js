@@ -3,24 +3,22 @@ const burger = require("../models/burger.js")
 
 
 function router ( app ){
-    app.get("/", function(req,res){
+    app.get("/", async function(req,res){
         console.log(`[GET] getting list of burgers`)
-        res.render('burger_list', 
-        {
-            available:burger.getAvailable(), 
-            devoured:burger.getDevoured()
-        })
+        const available = await burger.getAvailable
+        const devoured = await burger.getDevoured
+        res.render('burger_list', {available, devoured })
     })
 
-    app.get("/devour/:id", function (req, res){
-        const result = burger.devour(req.params.id)
+    app.get("/devour/:id", async function (req, res){
+        const result = await burger.devour(req.params.id)
 
         res.redirect("/")
     })
 
-    app.post("/", function (req,res){
+    app.post("/", async function (req,res){
         console.log.apply(`[POST] we received this data:`, req.body )
-        burger.add(req.body.burger)
+        await burger.add(req.body.burger)
 
         console.log(`new list of available burgers: `, burger.getAvailable() )
         res.redirect("/");
