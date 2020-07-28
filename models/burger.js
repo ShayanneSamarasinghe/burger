@@ -16,6 +16,10 @@ function add (name){
     burgers.push({ id : Date.now(), name, devoured : false})
 }
 
+function devour (id){
+
+}
+
 module.exports = {
-    getAvailable, getDevoured, add
+    getAvailable, getDevoured, add, devour
 }

@@ -11,7 +11,13 @@ function router ( app ){
             devoured:burger.getDevoured()
         })
     })
-    
+
+    app.get("/delete/:id", function (req, res){
+        const result = burger.delete(req.params.id)
+
+        res.redirect("/")
+    })
+
     app.post("/", function (req,res){
         console.log.apply(`[POST] we received this data:`, req.body )
         burger.add(req.body.burger)
