@@ -2,7 +2,19 @@ const mysql = require("mysql");
 
 class Database {
   constructor( config ) {
-      this.connection = mysql.createConnection( config );
+      // ternary operator
+      // true ? "I am true" : "I am false"
+      // hungry ? "Make me a sandwhich" : "Nah, I'm good"
+      // jawsdbexists ? "use jaws db" : "use localhost"
+    // var connectionURL;
+    //   if (process.env.JAWSDB_URL) {
+    //     connectionURL = process.env.JAWSDB_URL
+    //   } else {
+    //       connectionURL = config
+    //   }
+      // null coalescing operator
+      // true ?? false // return true
+      this.connection = mysql.createConnection( process.env.JAWSDB_URL ?? config );
   }
   query( sql, args ) {
       return new Promise( ( resolve, reject ) => {
