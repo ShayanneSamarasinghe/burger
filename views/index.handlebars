@@ -4,10 +4,12 @@
             <!-- available -->
             {{#each available}}
             <div  class= "row btn-toolbar mb-3">
-                <div class="input-group-text" id="btnGroupAddon">{{burger_name}}</div>
-                <div>
+                {{!-- <div class="container"> --}}
+                <div class="input-group-text burgerOutput" id="btnGroupAddon ">{{burger_name}}
                 <a href = "/devour/{{id}}" class="btn btn-secondary">Devour-It!</a>
                 </div>
+                {{!-- </div> --}}
+                
             </div>
         
         {{/each}}
@@ -16,7 +18,7 @@
         <div class ="col-md-6">
             {{!-- devoured burgers --}}
             {{#each devoured}}
-            <div class="row alert alert-secondary">
+            <div class="row alert alert-secondary burger-alert">
                 {{burger_name}}
             </div>   
             {{/each}} 
