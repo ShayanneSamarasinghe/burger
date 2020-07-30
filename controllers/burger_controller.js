@@ -1,5 +1,5 @@
 const burger = require("../models/burger.js")
-const { devour } = require("../models/burger.js")
+
 
 
 

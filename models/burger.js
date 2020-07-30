@@ -30,6 +30,7 @@ function devour (id){
 //     burgers[idx].devoured = true 
 }
 
+
 module.exports = {
     getAvailable, getDevoured, add, devour
 }
