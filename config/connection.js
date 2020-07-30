@@ -14,7 +14,7 @@ class Database {
     //   }
       // null coalescing operator
       // true ?? false // return true
-      this.connection = mysql.createConnection( process.env.JAWSDB_URL ?? config );
+      this.connection = mysql.createConnection( process.env.JAWSDB_URL ? process.env.JAWSDB_URL : config) 
   }
   query( sql, args ) {
       return new Promise( ( resolve, reject ) => {
